@@ -177,3 +177,6 @@ b)
   >>> 
 
 ```
+
+# Exercice 3
+- Voir fichier exercice3

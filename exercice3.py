@@ -3,7 +3,15 @@ def ex1():
         print(i)
 def ex2():
     print(list(range(2, 11)))
-def ex3():
     print(list(range(2, 12, 2)))
-def ex4():
     print(list(range(10, 1,-2)))
+
+def ex3():
+    a = [i for i in range(0, 14, 2)]
+    b = [i for i in "abcdef"]
+    c = reverse(a)
+    d = [(i, j) for i, j in zip(b, c)]
+    return a, b, c, d
+
+def reverse(a):
+    return list(reversed(a))
