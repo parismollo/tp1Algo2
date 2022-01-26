@@ -179,4 +179,4 @@ b)
 ```
 
 # Exercice 3
-- Voir fichier exercice3
+- Voir fichier tp1_ex3
