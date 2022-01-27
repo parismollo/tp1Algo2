@@ -26,11 +26,11 @@ def addition(nb1, nb2) :
   retenue = 0
   op = 0
   for (chiffre1, chiffre2) in zip(nb1, nb2) :
-    tmp = chiffre1 + chiffre2 + retenue
-    op += 0 # A REMPLIR
-    retenue = tmp//10 
-    res.append(tmp%10)
-    op += 0 # A REMPLIR
+    tmp = chiffre1 + chiffre2 + retenue # +2 opérations
+    op += 2
+    retenue = tmp//10 # +1 opération
+    res.append(tmp%10) # +1 opération
+    op += 2 
   return res + [retenue] if retenue > 0 else res, op
 
 #
@@ -39,7 +39,18 @@ def addition(nb1, nb2) :
 # L'addition de deux tableaux de chiffres decimaux de taille differente
 #
 def additionV(nb1, nb2) :
-  # A REMPLIR
+  len_a = len(nb1)
+  len_b = len(nb2)
+  if len_a > len_b:
+    dif = len(nb1) - len(nb2)
+    while dif > 0:
+      nb2.append(0)
+      dif-=1
+  if len_b > len_a:
+    dif = len(nb2) - len(nb1)
+    while dif > 0:
+      nb1.append(0)
+      dif-=1
   return addition(nb1, nb2)
   
 #
@@ -51,10 +62,10 @@ def multiplication1(nb1, nb2) :
   "multiplication de nb1, nb2 tableaux de chiffres par additions"
   res = nb1[:]  # copie du premier nombre
   vnb2 = valeur(nb2)
-  op = 0
+  op = len(nb1)
   for i in range(1, vnb2) :
     res, tmp = additionV(res, nb1)
-    op += 0 # A REMPLIR
+    op += tmp 
   return res, op
 
 #
@@ -69,10 +80,10 @@ def multiplication_par_un_chiffre(nb1, chiffre2) :
   op = 0
   for chiffre1 in nb1 :
     tmp = chiffre1 * chiffre2 + retenue
-    op += 0 # A REMPLIR
+    op += 2 # A REMPLIR
     retenue = tmp//10
     res.append(tmp%10)
-    op += 0 # A REMPLIR
+    op += 2 # A REMPLIR
   return res + [retenue], op
 
 def multiplication2(nb1, nb2) :
@@ -83,7 +94,7 @@ def multiplication2(nb1, nb2) :
     tmp, opm = multiplication_par_un_chiffre(nb1, chiffre2)
     res, opa = additionV(res, [0]*i + tmp)
     # A COMPLETER
-    op += 0 # A REMPLIR
+    op += opm + opa # A REMPLIR
   return res, op
 
 #

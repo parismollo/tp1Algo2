@@ -180,3 +180,6 @@ b)
 
 # Exercice 3
 - Voir fichier tp1_ex3
+
+# Exercice 4
+- Voir fichier tp1_ex4
