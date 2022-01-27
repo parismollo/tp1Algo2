@@ -62,7 +62,8 @@ def multiplication1(nb1, nb2) :
   "multiplication de nb1, nb2 tableaux de chiffres par additions"
   res = nb1[:]  # copie du premier nombre
   vnb2 = valeur(nb2)
-  op = len(nb1)
+  op = 0
+  # op = len(nb1) 
   for i in range(1, vnb2) :
     res, tmp = additionV(res, nb1)
     op += tmp 

@@ -5,7 +5,7 @@
 #
 # Expression conditionnelle
 # retourne True si x > 0, False si x <= 0 ou si x vaut None
-def expression_5(x) :
+def expression_5_version1(x) :
 	return  True if (x > 0) else False if (x<=0 or x == None) else False
 
 def expression_5_version2(x) :
@@ -13,7 +13,7 @@ def expression_5_version2(x) :
 	if x <=0 or x == None : return False
 
 # Cetter version fonctionne aussi pour x == None
-def expression_5_version3(x) :
+def expression_5(x) :
 	return  False if (x == None or x<=0) else True if (x>0) else False
 
 
