@@ -67,8 +67,18 @@ def g(l):
 # A REMPLIR
 #
 def somme_impairs(x) :
+    """Calcule la somme des entiers impairs de 1 a x"""
 # calcule la somme des entiers impairs de 1 à x
-	return 0
+    ls = range(1, x+1)
+    res = 0
+    for i in ls:
+        if(est_impair(i)):
+            print(i)
+            res+=i
+    return res
+
+def est_impair(i):
+    return i % 2 != 0
 
 def test_somme(n) :
 # teste que la somme des entiers impairs de 1 à x =
@@ -110,4 +120,4 @@ def testOp(op, data) :
 
 if __name__ == '__main__':
         test_crible(50)
-        # testOp(somme_impairs, testDataSomme())
+        testOp(somme_impairs, testDataSomme())
